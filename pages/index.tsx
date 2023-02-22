@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <div className="bg-beige">
       <Header />
+
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo
         perspiciatis asperiores temporibus cupiditate error praesentium
