@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+import useScrollPosition from "./utils/scroll-position";
+
+import classNames from "classnames";
+
 import logo from "../public/logos/simone-snoyman-physiotherapy-logo.png";
 import menuIcon from "../public/icons/menu-icon.svg";
 import closeIcon from "../public/icons/close-icon.svg";
@@ -14,20 +18,38 @@ interface Props {
 
 const Header = ({ cssClasses }: Props) => {
   const [menuToggle, setMenuToggle] = useState(false);
+  const scrollPosition = useScrollPosition();
 
   return (
     <header
-      className={`${cssClasses} drop-shadow-md border-b-2 border-darkBlue`}
+      className={`fixed w-full drop-shadow-md border-b-2 border-darkBlue ${cssClasses}`}
     >
       {!menuToggle && (
-        <div className="px-[20px] py-6 flex justify-between gap-6 bg-beige">
+        <div
+          className={classNames(
+            "px-[20px] py-6 flex justify-between gap-6 bg-beige",
+            {
+              "h-[90px]": scrollPosition > 0,
+            }
+          )}
+        >
           <Link href="/" className="flex gap-4 items-center">
             <Image
               src={logo}
               alt="Simone Snoyman Physiontherapy logo"
-              className="w-[100px] h-auto"
+              className={classNames(
+                "w-[100px] h-auto transform ease-in-out duration-[150ms]",
+                {
+                  "scale-[45%] -translate-y-0.5 -translate-x-5":
+                    scrollPosition > 0,
+                }
+              )}
             />
-            <div>
+            <div
+              className={classNames("transform ease-in-out duration-[400ms]", {
+                " -translate-y-28": scrollPosition > 0,
+              })}
+            >
               <h1 className="flex flex-col">
                 <span className="font-amatic_sc tracking-[0.11rem] text-[2.25rem] text-lightBlue1">
                   SIMONE SNOYMAN
@@ -43,7 +65,12 @@ const Header = ({ cssClasses }: Props) => {
           </Link>
           <button
             onClick={() => setMenuToggle(!menuToggle)}
-            className="h-16 w-16 -mr-1 grid place-items-center my-auto"
+            className={classNames(
+              "h-16 w-16 grid place-items-center my-auto transform ease-in-out duration-[150ms]",
+              {
+                "-translate-y-2.5": scrollPosition > 0,
+              }
+            )}
           >
             <Image src={menuIcon} alt="Menu icon" className="w-[50px] h-auto" />
           </button>
@@ -52,7 +79,7 @@ const Header = ({ cssClasses }: Props) => {
 
       {/* mobile navigation */}
       {menuToggle && (
-        <nav className="bg-blue flex justify-between pt-10 pb-8 px-[30px]">
+        <nav className="bg-blue flex justify-between pt-10 pb-8 pl-[30px] pr-[20px]">
           <ul className="flex flex-col gap-5 font-lato font-extralight text-[1.5rem] text-white">
             {menuList.map(({ title, url }, index) => (
               <li key={index}>
@@ -73,4 +100,5 @@ const Header = ({ cssClasses }: Props) => {
     </header>
   );
 };
+
 export default Header;
