@@ -35,7 +35,12 @@ module.exports = {
     },
     fontSize: {
       paragraph: "1.25rem",
-      heading: "2.75rem",
+      heading: [
+        "2.75rem",
+        {
+          letterSpacing: ".13rem",
+        },
+      ],
     },
     extend: {},
   },
