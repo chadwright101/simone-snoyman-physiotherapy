@@ -5,6 +5,7 @@ import { useState } from "react";
 import useScrollPosition from "./utils/scroll-position";
 
 import classNames from "classnames";
+import { useSpring, animated } from "@react-spring/web";
 
 import logo from "../public/logos/simone-snoyman-physiotherapy-logo.png";
 import menuIcon from "../public/icons/menu-icon.svg";
@@ -18,7 +19,28 @@ interface Props {
 
 const Header = ({ cssClasses }: Props) => {
   const [menuToggle, setMenuToggle] = useState(false);
+
   const scrollPosition = useScrollPosition();
+
+  const logoLoadAnimate = useSpring({
+    from: { x: -750, opacity: 0 },
+    to: { x: 0, opacity: 100 },
+    config: {
+      mass: 10,
+      tension: 220,
+      bounce: 0.1,
+    },
+  });
+
+  const [mobileMenuToggle, setMobileMenuToggle] = useSpring(() => ({
+    to: { x: -150, opacity: 100 },
+    config: {
+      loop: { reverse: true },
+      mass: 5,
+      tension: 240,
+      bounce: 0.05,
+    },
+  }));
 
   return (
     <header
@@ -33,42 +55,64 @@ const Header = ({ cssClasses }: Props) => {
             }
           )}
         >
-          <Link href="/" className="flex gap-4 items-center">
-            <Image
-              src={logo}
-              alt="Simone Snoyman Physiontherapy logo"
-              className={classNames(
-                "w-[100px] h-auto transform ease-in-out duration-[150ms]",
-                {
-                  "scale-[45%] -translate-y-0.5 -translate-x-5":
-                    scrollPosition > 0,
-                }
-              )}
-            />
-            <div
-              className={classNames("transform ease-in-out duration-[400ms]", {
-                " -translate-y-28": scrollPosition > 0,
-              })}
-            >
-              <h1 className="flex flex-col">
-                <span className="font-amatic_sc tracking-[0.11rem] text-[2.25rem] text-lightBlue1">
-                  SIMONE SNOYMAN
-                </span>
-                <span className="font-bebas_neue text-[2.5rem] text-darkBlue -mt-2.5 -mb-2">
-                  PHYSIOTHERAPY
-                </span>
-              </h1>
-              <h2 className="font-lato font-thin text-[1rem]">
-                Plettenberg Bay
-              </h2>
-            </div>
-          </Link>
+          <animated.div style={logoLoadAnimate}>
+            <Link href="/" className="flex gap-4 items-center">
+              <Image
+                src={logo}
+                alt="Simone Snoyman Physiontherapy logo"
+                className={classNames(
+                  "w-[100px] h-auto transform ease-in-out duration-[150ms]",
+                  {
+                    "scale-[45%] -translate-y-[43px] -translate-x-5":
+                      scrollPosition > 0,
+                  }
+                )}
+              />
+              <div>
+                <h1 className="flex flex-col">
+                  <span
+                    className={classNames(
+                      "font-amatic_sc tracking-[0.11rem] text-[2.25rem] text-lightBlue1 transform ease-in-out duration-[70ms]",
+                      {
+                        "opacity-0": scrollPosition > 0,
+                      }
+                    )}
+                  >
+                    SIMONE SNOYMAN
+                  </span>
+                  <span
+                    className={classNames(
+                      "font-bebas_neue text-[2.5rem] text-darkBlue -mt-2.5 -mb-2 transform ease-in-out duration-[70ms]",
+                      {
+                        "opacity-0": scrollPosition > 0,
+                      }
+                    )}
+                  >
+                    PHYSIOTHERAPY
+                  </span>
+                </h1>
+                <h2
+                  className={classNames(
+                    "font-lato font-thin text-[1rem] transform ease-in-out duration-[70ms]",
+                    {
+                      "opacity-0": scrollPosition > 0,
+                    }
+                  )}
+                >
+                  Plettenberg Bay
+                </h2>
+              </div>
+            </Link>
+          </animated.div>
           <button
-            onClick={() => setMenuToggle(!menuToggle)}
+            onClick={() => {
+              setMenuToggle(!menuToggle);
+              setMobileMenuToggle({ x: 0, opacity: 100 });
+            }}
             className={classNames(
               "h-16 w-16 grid place-items-center my-auto transform ease-in-out duration-[150ms]",
               {
-                "-translate-y-2.5": scrollPosition > 0,
+                "-translate-y-[10.5px]": scrollPosition > 0,
               }
             )}
           >
@@ -80,15 +124,18 @@ const Header = ({ cssClasses }: Props) => {
       {/* mobile navigation */}
       {menuToggle && (
         <nav className="bg-blue flex justify-between pt-10 pb-8 pl-[30px] pr-[20px]">
-          <ul className="flex flex-col gap-5 font-lato font-extralight text-[1.5rem] text-white">
-            {menuList.map(({ title, url }, index) => (
+          <animated.ul
+            style={mobileMenuToggle}
+            className="flex flex-col gap-6 font-lato font-extralight text-[1.5rem] text-white"
+          >
+            {menuList.map(({ title, url, delay }, index) => (
               <li key={index}>
-                <Link href={url} className="py-2.5 px-3 -ml-3">
+                <Link href={url} className="py-2.5 px-3 -ml-3 transform">
                   {title}
                 </Link>
               </li>
             ))}
-          </ul>
+          </animated.ul>
           <button
             onClick={() => setMenuToggle(!menuToggle)}
             className="w-[50px] h-[50px]"

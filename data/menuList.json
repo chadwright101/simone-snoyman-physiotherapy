@@ -1,7 +1,8 @@
 [
   {
     "title": "Home",
-    "url": "/"
+    "url": "/",
+    "delay": "duration-[1000ms]"
   },
   {
     "title": "About",
