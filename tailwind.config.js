@@ -27,18 +27,18 @@ module.exports = {
       lato_regular: "lato-regular",
     },
     screens: {
+      phoneTiny: "320px",
       phoneSmall: "400px",
       phoneLarge: "600px",
-      tabletSmall: "900px",
-      tabletLarge: "1100px",
+      tablet: "900px",
       desktop: "1400px",
     },
     fontSize: {
       paragraph: "1.25rem",
       heading: [
-        "2.75rem",
+        "1.75rem",
         {
-          letterSpacing: ".13rem",
+          letterSpacing: ".09rem",
         },
       ],
     },

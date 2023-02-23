@@ -49,19 +49,20 @@ const Header = ({ cssClasses }: Props) => {
       {!menuToggle && (
         <div
           className={classNames(
-            "px-[20px] py-6 flex justify-between gap-6 bg-beige",
+            "px-[20px] py-6 flex justify-between gap-3 phoneSmall:gap-6 bg-beige",
             {
               "h-[90px]": scrollPosition > 0,
             }
           )}
         >
+          {/* logo */}
           <animated.div style={logoLoadAnimate}>
             <Link href="/" className="flex gap-4 items-center">
               <Image
                 src={logo}
                 alt="Simone Snoyman Physiontherapy logo"
                 className={classNames(
-                  "w-[100px] h-auto transform ease-in-out duration-[150ms]",
+                  "hidden phoneTiny:block w-[50px] phoneSmall:w-[100px] h-auto transform ease-in-out duration-[150ms] ",
                   {
                     "scale-[45%] -translate-y-[43px] -translate-x-5":
                       scrollPosition > 0,
@@ -72,7 +73,7 @@ const Header = ({ cssClasses }: Props) => {
                 <h1 className="flex flex-col">
                   <span
                     className={classNames(
-                      "font-amatic_sc tracking-[0.11rem] text-[2.25rem] text-lightBlue1 transform ease-in-out duration-[70ms]",
+                      "font-amatic_sc text-[1.5rem] tracking-[0.0825rem] phoneSmall:tracking-[0.09625rem] phoneSmall:text-[1.75rem] text-lightBlue1 transform ease-in-out duration-[70ms]",
                       {
                         "opacity-0": scrollPosition > 0,
                       }
@@ -82,7 +83,7 @@ const Header = ({ cssClasses }: Props) => {
                   </span>
                   <span
                     className={classNames(
-                      "font-bebas_neue text-[2.5rem] text-darkBlue -mt-2.5 -mb-2 transform ease-in-out duration-[70ms]",
+                      "font-bebas_neue text-[1.5rem] tracking-[0.0675rem] phoneSmall:text-[1.75rem] phoneSmall:tracking-[0.09rem] text-darkBlue -mt-2.5 -mb-2 transform ease-in-out duration-[70ms]",
                       {
                         "opacity-0": scrollPosition > 0,
                       }
@@ -93,7 +94,7 @@ const Header = ({ cssClasses }: Props) => {
                 </h1>
                 <h2
                   className={classNames(
-                    "font-lato font-thin text-[1rem] transform ease-in-out duration-[70ms]",
+                    "font-lato font-thin text-[0.875rem] phoneSmall:text-[1rem] transform ease-in-out duration-[70ms]",
                     {
                       "opacity-0": scrollPosition > 0,
                     }
@@ -123,12 +124,12 @@ const Header = ({ cssClasses }: Props) => {
 
       {/* mobile navigation */}
       {menuToggle && (
-        <nav className="bg-blue flex justify-between pt-10 pb-8 pl-[30px] pr-[20px]">
+        <nav className="bg-blue flex justify-between pt-12 pb-8 pl-[30px] pr-[20px]">
           <animated.ul
             style={mobileMenuToggle}
             className="flex flex-col gap-6 font-lato font-extralight text-[1.5rem] text-white"
           >
-            {menuList.map(({ title, url, delay }, index) => (
+            {menuList.map(({ title, url }, index) => (
               <li key={index}>
                 <Link href={url} className="py-2.5 px-3 -ml-3 transform">
                   {title}
@@ -138,9 +139,13 @@ const Header = ({ cssClasses }: Props) => {
           </animated.ul>
           <button
             onClick={() => setMenuToggle(!menuToggle)}
-            className="w-[50px] h-[50px]"
+            className="w-16 h-16 grid place-items-center -mt-2.5"
           >
-            <Image src={closeIcon} alt="Close icon" />
+            <Image
+              className="w-[50px] h-auto"
+              src={closeIcon}
+              alt="Close icon"
+            />
           </button>
         </nav>
       )}
