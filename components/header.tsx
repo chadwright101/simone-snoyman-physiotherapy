@@ -44,15 +44,15 @@ const Header = ({ cssClasses }: Props) => {
 
   return (
     <header
-      className={`fixed w-full drop-shadow-md border-b-2 border-darkBlue bg-beige ${cssClasses}`}
+      className={`fixed w-full drop-shadow-md border-b-2 border-darkBlue bg-beige z-10 ${cssClasses}`}
     >
-      <div className="tablet:pr-[50px] justify-between items-end tablet:flex tablet:py-6 desktop:max-w-[1400px] desktop:mx-auto">
+      <div className="tablet:pr-[50px] justify-between items-end tablet:flex tablet:py-6 desktop:max-w-[1400px] desktop:mx-auto desktop:px-0">
         {!menuToggle && (
           <div
             className={classNames(
-              "px-[20px] tablet:pl-[50px] py-6 tablet:py-0 flex justify-between gap-3 phoneSmall:gap-6",
+              "px-[20px] tablet:pl-[50px] py-6 tablet:py-0 flex justify-between gap-3 phoneSmall:gap-6 desktop:px-0",
               {
-                "h-[90px] tablet:h-[40px]": scrollPosition > 0,
+                "h-[75px] tablet:h-[35px]": scrollPosition > 100,
               }
             )}
           >
@@ -65,14 +65,14 @@ const Header = ({ cssClasses }: Props) => {
                   className={classNames(
                     "hidden phoneTiny:block w-[50px] phoneSmall:w-[100px] h-auto tablet:w-[60px]",
                     {
-                      "max-w-[45px] -translate-y-[17px] phoneSmall:-translate-y-[25px] tablet:max-w-[45px] tablet:translate-x-0 tablet:-translate-y-3.5":
-                        scrollPosition > 0,
+                      "max-w-[38px] -translate-y-[24px] phoneSmall:-translate-y-[32px] tablet:max-w-[45px] tablet:translate-x-0 tablet:-translate-y-4":
+                        scrollPosition > 100,
                     }
                   )}
                 />
                 <div
                   className={classNames("transform", {
-                    "opacity-0": scrollPosition > 0,
+                    "opacity-0": scrollPosition > 100,
                   })}
                 >
                   <h1 className="flex flex-col">
@@ -97,7 +97,7 @@ const Header = ({ cssClasses }: Props) => {
               className={classNames(
                 "h-16 w-16 grid place-items-center my-auto transform tablet:hidden",
                 {
-                  "-translate-y-[10.5px]": scrollPosition > 0,
+                  "-translate-y-[17.5px]": scrollPosition > 100,
                 }
               )}
             >
@@ -115,13 +115,16 @@ const Header = ({ cssClasses }: Props) => {
           <nav className="bg-blue flex justify-between pt-12 pb-8 pl-[30px] pr-[20px] tablet:hidden">
             <animated.ul
               style={mobileMenuToggle}
-              className="flex flex-col gap-6 font-lato font-extralight text-[1.5rem] text-white"
+              className="flex flex-col font-lato font-extralight text-[1.5rem] text-white w-full"
             >
               {menuList.map(({ title, url }, index) => (
-                <li key={index}>
-                  <Link href={url} className="py-2.5 px-3 -ml-3 transform">
+                <li onClick={() => setMenuToggle(!menuToggle)} key={index}>
+                  <Link href={url} className="px-3 -ml-3 transform">
                     {title}
                   </Link>
+                  {index < menuList.length - 1 && (
+                    <div className="h-px my-4 bg-white w-[90%]"></div>
+                  )}
                 </li>
               ))}
             </animated.ul>
@@ -142,7 +145,7 @@ const Header = ({ cssClasses }: Props) => {
 
         <nav
           className={classNames("hidden tablet:block pb-1", {
-            "translate-y-[14px]": scrollPosition > 0,
+            "translate-y-[14px]": scrollPosition > 100,
           })}
         >
           <ul className="flex gap-5 text-paragraph font-extralight">
