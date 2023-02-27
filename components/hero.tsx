@@ -5,6 +5,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import heroImages from "../data/heroImages.json";
 
 import "@splidejs/react-splide/css";
+import Button, { ButtonVariant } from "./button";
 
 interface Props {
   cssClasses?: string;
@@ -44,6 +45,13 @@ const Hero = ({ cssClasses }: Props) => {
           </SplideSlide>
         ))}
       </Splide>
+      <Button
+        url="/#contact"
+        variant={ButtonVariant.Normal}
+        cssClasses="-translate-y-20 ml-10 tablet:ml-0 tablet:mr-10 tablet:flex tablet:justify-end desktop:mr-24"
+      >
+        Get in Touch
+      </Button>
     </section>
   );
 };

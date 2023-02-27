@@ -1,3 +1,4 @@
+import Button, { ButtonVariant } from "@/components/button";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Layout from "@/components/layout";
@@ -7,6 +8,11 @@ export default function Home() {
     <div className="bg-beige">
       <Header />
       <Hero />
+      <div className="bg-blue py-2">
+        <Button variant={ButtonVariant.FormSubmit} url="/">
+          Submit
+        </Button>
+      </div>
       <Layout>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo
