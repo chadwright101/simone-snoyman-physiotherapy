@@ -33,16 +33,14 @@ const Hero = ({ cssClasses }: Props) => {
         }}
       >
         {heroImages.map(({ src, alt }, index) => (
-          <SplideSlide>
-            <div key={index}>
-              <Image
-                src={src}
-                alt={alt}
-                width={1400}
-                height={700}
-                className="w-full object-cover pt-[126px] h-[600px] phoneTiny:h-[700px] phoneSmall:pt-[177px]  phoneSmall:h-screen phoneLarge:h-[700px] tablet:pt-[126px] desktop:h-[800px]"
-              />
-            </div>
+          <SplideSlide key={index}>
+            <Image
+              src={src}
+              alt={alt}
+              width={1400}
+              height={700}
+              className="w-full object-cover pt-[126px] h-[600px] phoneTiny:h-[700px] phoneSmall:pt-[177px]  phoneSmall:h-screen phoneLarge:h-[700px] tablet:pt-[126px] desktop:h-[800px]"
+            />
           </SplideSlide>
         ))}
       </Splide>
