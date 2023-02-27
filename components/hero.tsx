@@ -12,7 +12,9 @@ interface Props {
 
 const Hero = ({ cssClasses }: Props) => {
   return (
-    <section className={`desktop:max-w-[1400px] desktop:mx-auto ${cssClasses}`}>
+    <section
+      className={`desktop:max-w-[1200px] desktop:mx-auto desktopLarge:max-w-[1400px] ${cssClasses}`}
+    >
       <Splide
         options={{
           pagination: true,

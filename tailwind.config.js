@@ -31,7 +31,8 @@ module.exports = {
       phoneSmall: "400px",
       phoneLarge: "600px",
       tablet: "900px",
-      desktop: "1400px",
+      desktop: "1300px",
+      desktopLarge: "1500px",
     },
     fontSize: {
       paragraph: "1.25rem",

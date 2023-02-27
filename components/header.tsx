@@ -46,7 +46,7 @@ const Header = ({ cssClasses }: Props) => {
     <header
       className={`fixed w-full drop-shadow-md border-b-2 border-darkBlue bg-beige z-10 ${cssClasses}`}
     >
-      <div className="tablet:pr-[50px] justify-between items-end tablet:flex tablet:py-6 desktop:max-w-[1400px] desktop:mx-auto desktop:px-0">
+      <div className="tablet:pr-[50px] justify-between items-end tablet:flex tablet:py-6 desktop:max-w-[1200px] desktopLarge:max-w-[1400px] desktop:mx-auto desktop:px-0">
         {!menuToggle && (
           <div
             className={classNames(
