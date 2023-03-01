@@ -3,9 +3,13 @@ import Image from "next/image";
 import logo1 from "public/logos/hpcsa-logo.png";
 import logo2 from "public/logos/sasp-logo.jpg";
 
-const About1 = () => {
+interface Props {
+  cssClasses?: string;
+}
+
+const About1 = ({ cssClasses }: Props) => {
   return (
-    <article>
+    <article className={`${cssClasses}`}>
       <div className="grid grid-cols-1 items-center tablet:grid-cols-[75%_25%] gap-x-6">
         <div className="flex flex-col tablet:flex-col gap-10 items-center tablet:order-2 tablet:row-span-2 tablet:place-self-start desktop:gap-5">
           <p className="text-left">Proudly registered with:</p>

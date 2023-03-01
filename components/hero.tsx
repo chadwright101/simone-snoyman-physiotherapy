@@ -40,7 +40,7 @@ const Hero = ({ cssClasses }: Props) => {
               alt={alt}
               width={1400}
               height={700}
-              className="w-full object-cover pt-[126px] h-[600px] phoneTiny:h-[700px] phoneSmall:pt-[177px]  phoneSmall:h-screen phoneLarge:h-[700px] tablet:pt-[126px] desktop:h-[800px]"
+              className="w-full object-cover pt-[126px] phoneSmall:pt-[177px] h-screen phoneLarge:h-[700px] tablet:pt-[126px] desktop:h-[800px]"
             />
           </SplideSlide>
         ))}
