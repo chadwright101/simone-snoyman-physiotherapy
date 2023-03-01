@@ -112,7 +112,7 @@ const Header = ({ cssClasses }: Props) => {
 
         {/* mobile navigation */}
         {menuToggle && (
-          <nav className="bg-blue flex justify-between pt-12 pb-8 pl-[30px] pr-[20px] tablet:hidden">
+          <nav className="bg-blue h-screen phoneLarge:h-auto flex justify-between pt-12 pb-8 pl-[30px] pr-[20px] tablet:hidden">
             <animated.ul
               style={mobileMenuToggle}
               className="flex flex-col font-lato font-extralight text-[1.5rem] text-white w-full"

@@ -61,3 +61,14 @@
     url("../fonts/lato/lato-regular.ttf") format("truetype");
   font-display: swap
 }
+
+@layer base {
+
+  p,
+  ul {
+    text-align: justify;
+    font-size: 1.25rem;
+    font-weight: 200;
+    @apply text-black
+  }
+}
