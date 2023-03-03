@@ -37,7 +37,9 @@ const Testimonials = ({ cssClasses }: Props) => {
             className="flex justify-center items-center tablet:justify-start"
           >
             <div className="pr-10">
-              <blockquote className="italic mb-4">"{quote}"</blockquote>
+              <blockquote className="italic mb-4">
+                &quot;{quote}&quot;
+              </blockquote>
               <p className="font-normal">{name}</p>
               <p className="font-thin">{location}</p>
             </div>
