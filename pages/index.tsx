@@ -1,6 +1,7 @@
 import About1 from "@/components/about-1";
 import About2 from "@/components/about-2";
 import Conditions from "@/components/conditions";
+import Contact from "@/components/contact";
 import Fees from "@/components/fees";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
@@ -26,6 +27,7 @@ export default function Home() {
           <Testimonials />
         </div>
       </Layout>
+      <Contact cssClasses="mb-24" />
     </div>
   );
 }
