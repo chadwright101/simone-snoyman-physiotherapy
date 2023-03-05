@@ -20,7 +20,7 @@ const Treatments = ({ cssClasses }: Props) => {
         Emphasis is placed on “Hands-On” treatments individualised for every
         person.
       </p>
-      <ul className="list-disc ml-8 place-self-start">
+      <ul className="list-disc ml-8 place-self-start text-left phoneSmall:text-justify">
         {treatmentList.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
