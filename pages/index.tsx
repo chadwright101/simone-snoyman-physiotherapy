@@ -3,6 +3,7 @@ import About2 from "@/components/about-2";
 import Conditions from "@/components/conditions";
 import Contact from "@/components/contact";
 import Fees from "@/components/fees";
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Layout from "@/components/layout";
@@ -27,7 +28,10 @@ export default function Home() {
           <Testimonials />
         </div>
       </Layout>
-      <Contact cssClasses="mb-24" />
+      <Contact cssClasses="mb-20" />
+      <Layout>
+        <Footer cssClasses="pb-8 tablet:pb-6 desktop:pb-4" />
+      </Layout>
     </div>
   );
 }
