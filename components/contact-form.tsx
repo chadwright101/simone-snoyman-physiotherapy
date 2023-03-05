@@ -70,7 +70,7 @@ const ContactForm = ({ cssClasses }: Props) => {
               id="message"
               name="message"
               required
-              rows={4}
+              rows={3}
               placeholder="Type your message here"
               className="bg-white px-2.5 py-1.5 text-paragraph placeholder:italic font-thin placeholder:opacity-75 focus:text-black"
             />

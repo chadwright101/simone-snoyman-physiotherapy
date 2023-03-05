@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 import ContactForm from "./contact-form";
 
 interface Props {
@@ -30,12 +31,12 @@ const Contact = ({ cssClasses }: Props) => {
                 </p>
               )}
               {showPhone && (
-                <a
+                <Link
                   className="text-blue px-3 py-2 -mx-3 -my-2 desktop:p-0 desktop:m-0 tablet:hover:opacity-75 desktop:text-white"
                   href="tel:+27829234370"
                 >
                   082 923 4370
-                </a>
+                </Link>
               )}
             </li>
             <li className="desktop:grid grid-cols-[95px_1fr]">
@@ -49,12 +50,12 @@ const Contact = ({ cssClasses }: Props) => {
                 </p>
               )}
               {showEmail && (
-                <a
+                <Link
                   className="text-blue px-3 py-2 -mx-3 -my-2 desktop:p-0 desktop:m-0 tablet:hover:underline underline-offset-8 decoration-1 desktop:text-white"
                   href="mailto:snoymanphysio@gmail.com"
                 >
                   snoymanphysio@gmail.com
-                </a>
+                </Link>
               )}
             </li>
             <li className="desktop:grid grid-cols-[95px_1fr]">
@@ -67,7 +68,7 @@ const Contact = ({ cssClasses }: Props) => {
               <h5 className="underline font-normal underline-offset-[5px] decoration-1 mb-3">
                 Operating hours
               </h5>
-              <ul>
+              <ul className="flex flex-col gap-0.5 desktop:gap-0">
                 <li className="grid grid-cols-[120px_1fr]">
                   <p className="font-normal desktop:text-white">Monday:</p>
                   <p className="desktop:text-white">8:15-16:30</p>
