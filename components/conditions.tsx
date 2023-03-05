@@ -22,7 +22,7 @@ const Conditions = ({ cssClasses }: Props) => {
         alt=""
         className="max-w-[200px] h-[200px] object-cover rounded-full phoneLarge:row-span-2"
       />
-      <ul className="list-disc ml-8 place-self-start phoneLarge:row-span-3">
+      <ul className="list-disc ml-8 place-self-start phoneLarge:row-span-3 text-left phoneSmall:text-justify">
         {conditionsList.map((item, index) => (
           <li key={index}>{item}</li>
         ))}

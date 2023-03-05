@@ -22,7 +22,7 @@ const Footer = ({ cssClasses }: Props) => {
           className="w-[106px] h-auto"
         />
         <p className="font-thin text-[1rem] mb-4">PR No. 072 000 0272329</p>
-        <div className="grid grid-cols-2 items-center gap-6">
+        <div className="flex flex-wrap justify-center items-center gap-6">
           <Image
             src={logo2}
             alt="SASP logo"
@@ -35,7 +35,7 @@ const Footer = ({ cssClasses }: Props) => {
           />
         </div>
         <div className="flex flex-col items-center mt-4">
-          <p className="font-thin text-[1rem]">
+          <p className="font-thin text-[1rem] text-center">
             © Simone Snoyman Physiotherapy, Plettenberg Bay
           </p>
           <Link href="/" className="font-thin text-[1rem] text-blue">
