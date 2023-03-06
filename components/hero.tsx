@@ -33,7 +33,7 @@ const Hero = ({ cssClasses }: Props) => {
           drag: false,
         }}
       >
-        {heroImages.map(({ src, alt }, index) => (
+        {heroImages.map(({ src, alt, loading }, index) => (
           <SplideSlide key={index}>
             <Image
               src={src}
@@ -41,6 +41,7 @@ const Hero = ({ cssClasses }: Props) => {
               width={1400}
               height={700}
               className="w-full object-cover pt-[126px] phoneSmall:pt-[177px] h-screen phoneLarge:h-[700px] tablet:pt-[126px] desktop:h-[800px]"
+              loading={loading ? "eager" : "lazy"}
             />
           </SplideSlide>
         ))}
