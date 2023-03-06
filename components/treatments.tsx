@@ -25,7 +25,10 @@ const Treatments = ({ cssClasses }: Props) => {
           <li key={index}>{item}</li>
         ))}
       </ul>
-      <p className="place-self-start">Home visits offered upon request.</p>
+      <p className="place-self-start">
+        Home visits offered upon request in Plettenberg Bay and surrounding
+        areas.
+      </p>
       <Image
         src={image}
         alt=""

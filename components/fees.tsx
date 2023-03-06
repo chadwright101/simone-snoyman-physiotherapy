@@ -13,7 +13,8 @@ const Fees = ({ cssClasses }: Props) => {
         Fees
       </h2>
       <p className="place-self-start">
-        We are conveniently contracted to most medical aids.
+        We are conveniently contracted to most medical aids. The account remains
+        the responsibility of the account holder until settled in full.
       </p>
       <p className="place-self-start">
         Each session is approximately 45 minutes and is charged according to the
