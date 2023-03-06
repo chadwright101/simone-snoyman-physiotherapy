@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import image1 from "public/placeholders/AdobeStock_160757465_Preview.jpeg";
-import image2 from "public/placeholders/AdobeStock_244750183_Preview.jpeg";
+import image1 from "public/conditions/close-up-woman-pain.jpg";
+import image2 from "public/conditions/man-holds-his-back-due-pain.jpg";
 
 import conditionsList from "../data/conditions.json";
 
@@ -20,7 +20,7 @@ const Conditions = ({ cssClasses }: Props) => {
       <Image
         src={image1}
         alt=""
-        className="max-w-[200px] h-[200px] object-cover rounded-full phoneLarge:row-span-2"
+        className="max-w-[200px] h-[200px] object-cover rounded-full phoneLarge:row-span-2 object-right"
       />
       <ul className="list-disc ml-8 place-self-start phoneLarge:row-span-3 text-left phoneSmall:text-justify">
         {conditionsList.map((item, index) => (
@@ -30,7 +30,7 @@ const Conditions = ({ cssClasses }: Props) => {
       <Image
         src={image2}
         alt=""
-        className="max-w-[200px] h-[200px] object-cover rounded-full phoneLarge:col-start-2 phoneLarge:row-span-2"
+        className="max-w-[200px] h-[200px] object-cover rounded-full phoneLarge:col-start-2 phoneLarge:row-span-2 object-right -scale-x-100"
       />
     </article>
   );

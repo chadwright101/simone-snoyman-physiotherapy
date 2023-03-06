@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import image from "public/placeholders/AdobeStock_61892453_Preview.jpeg";
+import image from "public/treatments/doctor-examining-female-patient-stomach.jpg";
 
 import treatmentList from "../data/treatments.json";
 
@@ -25,7 +25,10 @@ const Treatments = ({ cssClasses }: Props) => {
           <li key={index}>{item}</li>
         ))}
       </ul>
-      <p className="place-self-start">Home visits offered upon request.</p>
+      <p className="place-self-start">
+        Home visits offered upon request in Plettenberg Bay and surrounding
+        areas.
+      </p>
       <Image
         src={image}
         alt=""

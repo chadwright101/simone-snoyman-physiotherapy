@@ -92,16 +92,14 @@ const Footer = ({ cssClasses }: Props) => {
             </Link>
           </div>
         </div>
-        <p>
-          <p className="font-thin text-[1rem]">
-            © Simone Snoyman Physiotherapy, Plettenberg Bay |{` `}
-            <Link
-              href="/"
-              className="font-thin text-[1rem] text-blue hover:underline underline-offset-4 decoration-1 decoration-blue"
-            >
-              www.simonesnoymanphysiotherapy.co.za
-            </Link>
-          </p>
+        <p className="font-thin text-[1rem]">
+          © Simone Snoyman Physiotherapy, Plettenberg Bay |{` `}
+          <Link
+            href="/"
+            className="font-thin text-[1rem] text-blue hover:underline underline-offset-4 decoration-1 decoration-blue"
+          >
+            www.simonesnoymanphysiotherapy.co.za
+          </Link>
         </p>
       </div>
     </footer>

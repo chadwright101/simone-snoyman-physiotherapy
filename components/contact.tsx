@@ -79,7 +79,7 @@ const Contact = ({ cssClasses }: Props) => {
                 </li>
                 <li className="grid grid-cols-[120px_1fr]">
                   <p className="font-normal desktop:text-white">Wednesday:</p>
-                  <p className="desktop:text-white">8:15-16:00</p>
+                  <p className="desktop:text-white">8:15-16:30</p>
                 </li>
                 <li className="grid grid-cols-[120px_1fr]">
                   <p className="font-normal desktop:text-white">Thursday:</p>
