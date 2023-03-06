@@ -20,7 +20,7 @@ const Hero = ({ cssClasses }: Props) => {
         options={{
           pagination: true,
           arrows: false,
-          autoplay: false,
+          autoplay: true,
           type: "loop",
           speed: 1500,
           interval: 5500,
