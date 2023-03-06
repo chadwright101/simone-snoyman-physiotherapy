@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import image1 from "public/placeholders/AdobeStock_317008171_Preview.jpeg";
-import image2 from "public/placeholders/AdobeStock_113268373_Preview.jpeg";
+import image1 from "public/about-2/adult-male-starting-recovery-plan.jpg";
+import image2 from "public/about-2/back-view-dark-haired-bearded-geriatrician-auscultating-lungs-gray-haired-caucasian-patient.jpg";
 
 interface Props {
   cssClasses?: string;
@@ -50,12 +50,12 @@ const About2 = ({ cssClasses }: Props) => {
           <Image
             src={image1}
             alt=""
-            className="h-60 object-cover phoneLarge:h-96 desktop:h-[335px] desktopLarge:h-[275px]"
+            className="h-72 object-cover phoneLarge:h-96 desktop:h-[335px] desktopLarge:h-[275px] object-left-top"
           />
           <Image
             src={image2}
             alt=""
-            className="h-60 object-cover phoneLarge:h-96 desktop:h-[335px] desktopLarge:h-[275px]"
+            className="h-72 object-cover phoneLarge:h-96 desktop:h-[335px] desktopLarge:h-[275px]"
           />
         </div>
       </div>

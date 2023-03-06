@@ -20,10 +20,9 @@ const Hero = ({ cssClasses }: Props) => {
         options={{
           pagination: true,
           arrows: false,
-          autoplay: true,
+          autoplay: false,
           type: "loop",
           speed: 1500,
-          pauseOnHover: true,
           interval: 5500,
           breakpoints: {
             900: {
@@ -33,14 +32,14 @@ const Hero = ({ cssClasses }: Props) => {
           drag: false,
         }}
       >
-        {heroImages.map(({ src, alt, loading }, index) => (
+        {heroImages.map(({ src, alt, loading, position }, index) => (
           <SplideSlide key={index}>
             <Image
               src={src}
               alt={alt}
               width={1400}
               height={700}
-              className="w-full object-cover pt-[126px] phoneSmall:pt-[177px] h-screen phoneLarge:h-[700px] tablet:pt-[126px] desktop:h-[800px]"
+              className={`w-full object-cover pt-[126px] phoneSmall:pt-[177px] h-[800px] phoneLarge:h-[700px] tablet:pt-[126px] desktop:h-[800px] ${position}`}
               loading={loading ? "eager" : "lazy"}
             />
           </SplideSlide>
