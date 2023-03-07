@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import image1 from "public/about-2/adult-male-starting-recovery-plan.jpg";
 import image2 from "public/about-2/back-view-dark-haired-bearded-geriatrician-auscultating-lungs-gray-haired-caucasian-patient.jpg";
+import icon from "public/graphics/medicine bag.png";
 
 interface Props {
   cssClasses?: string;
@@ -10,9 +11,16 @@ interface Props {
 const About2 = ({ cssClasses }: Props) => {
   return (
     <main className={`${cssClasses}`}>
-      <h2 className="text-heading uppercase font-bebas_neue text-center mb-10 tablet:text-left">
-        Who am I?
-      </h2>
+      <div className="flex flex-col gap-6 tablet:gap-4 tablet:flex-row items-center tablet:place-self-start">
+        <Image
+          src={icon}
+          alt="Medicine bottle icon"
+          className="h-20 tablet:h-[52px] tablet:-mt-12 w-auto"
+        />
+        <h2 className="text-heading uppercase font-bebas_neue text-center mb-10 tablet:text-left">
+          Who am I?
+        </h2>
+      </div>
       <div className="grid gap-10 desktop:grid-cols-2">
         <div className="flex flex-col gap-4">
           <p>
@@ -39,7 +47,7 @@ const About2 = ({ cssClasses }: Props) => {
             have done many post graduate studies including the NMS (neuro
             musculoskeletal course) in 2019 and obtaining my MCMT (Master
             certification in Manual Therapy) from New York. I am currently
-            working towards my certification in Chronic Pain Management.
+            working towards my certificate in Chronic Pain Management.
           </p>
           <p>
             My ultimate aim is helping my patients to achieve a pain free life

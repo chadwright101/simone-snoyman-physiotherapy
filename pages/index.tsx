@@ -18,21 +18,23 @@ export default function Home() {
       <Layout>
         <div id="about" className="-translate-y-36"></div>
         <About1 cssClasses="mt-10" />
-        <div className="desktop:flex flex-wrap">
-          <div
-            id="treatments"
-            className="-translate-y-32 desktop:-translate-y-20"
-          ></div>
-          <Conditions cssClasses="my-24" />
+        <div className="desktop:grid grid-cols-[1fr_500px] desktopLarge:grid-cols-2 gap-x-10 w-full">
+          <div>
+            <div
+              id="treatments"
+              className="-translate-y-32 desktop:-translate-y-20"
+            ></div>
+            <Conditions cssClasses="my-24" />
+          </div>
           <div>
             <div id="fees" className="desktop:hidden -translate-y-32"></div>
             <Fees cssClasses="desktop:hidden" />
           </div>
-          <Treatments cssClasses="my-24" />
-          <div>
-            <div id="your-physio" className="-translate-y-32"></div>
-            <About2 />
-          </div>
+          <Treatments cssClasses="my-24 desktop:col-start-2 desktop:row-start-1" />
+        </div>
+        <div>
+          <div id="your-physio" className="-translate-y-32"></div>
+          <About2 />
         </div>
         <div
           id="fees"

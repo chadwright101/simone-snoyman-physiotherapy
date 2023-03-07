@@ -1,4 +1,8 @@
+import Image from "next/image";
+
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+
+import icon from "public/graphics/medicine.png";
 
 import "@splidejs/react-splide/css";
 
@@ -11,9 +15,16 @@ interface Props {
 const Testimonials = ({ cssClasses }: Props) => {
   return (
     <article className={`${cssClasses}`}>
-      <h2 className="text-heading uppercase font-bebas_neue text-center tablet:text-left phoneLarge:place-self-start mb-10">
-        Testimonials
-      </h2>
+      <div className="flex flex-col gap-6 tablet:gap-4 tablet:flex-row items-center tablet:place-self-start">
+        <Image
+          src={icon}
+          alt="Medicine bottle icon"
+          className="h-20 tablet:h-[52px] tablet:-mt-10 w-auto"
+        />
+        <h2 className="text-heading uppercase font-bebas_neue text-center mb-10">
+          Testimonials
+        </h2>
+      </div>
       <Splide
         options={{
           arrows: false,
