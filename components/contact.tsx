@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 import ContactForm from "./contact-form";
+
+import icon from "public/graphics/stethoscope.png";
 
 interface Props {
   cssClasses?: string;
@@ -15,9 +19,16 @@ const Contact = ({ cssClasses }: Props) => {
       className={`desktop:bg-blue desktop:py-10 desktop:drop-shadow-md ${cssClasses}`}
     >
       <div className="px-[20px] tablet:px-[50px] desktop:px-0 desktop:max-w-[1200px] desktopLarge:max-w-[1400px] desktop:mx-auto">
-        <h2 className="text-heading uppercase font-bebas_neue text-center tablet:text-left phoneLarge:place-self-start mb-10 desktop:text-white">
-          Contact
-        </h2>
+        <div className="flex flex-col gap-6 tablet:gap-4 tablet:flex-row items-center tablet:place-self-start phoneLarge:place-self-start">
+          <Image
+            src={icon}
+            alt="Medicine bottle icon"
+            className="h-20 tablet:h-[52px] tablet:-mt-12 w-auto"
+          />
+          <h2 className="text-heading uppercase font-bebas_neue text-center tablet:text-left mb-10 desktop:text-white">
+            Contact
+          </h2>
+        </div>
         <div className="desktop:grid grid-cols-2">
           <ul className="flex flex-col gap-10 desktop:text-white desktop:gap-4">
             <li className="desktop:grid grid-cols-[95px_1fr]">
