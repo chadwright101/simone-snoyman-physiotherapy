@@ -23,7 +23,7 @@ const Contact = ({ cssClasses }: Props) => {
           <Image
             src={icon}
             alt="Medicine bottle icon"
-            className="h-20 tablet:h-[52px] tablet:-mt-12 w-auto"
+            className="h-20 tablet:h-[52px] tablet:-mt-12 w-auto desktop:hidden"
           />
           <h2 className="text-heading uppercase font-bebas_neue text-center tablet:text-left mb-10 desktop:text-white">
             Contact
