@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.10",
     "@next/font": "13.1.6",
     "@react-spring/web": "^9.6.1",
     "@splidejs/react-splide": "^0.7.12",

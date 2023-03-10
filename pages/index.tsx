@@ -7,10 +7,30 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Layout from "@/components/layout";
-import Testimonials from "@/components/testimonials";
 import Treatments from "@/components/treatments";
+import Testimonials from "@/components/testimonials";
 
-export default function Home() {
+import client from "../components/utils/client";
+
+import { gql } from "@apollo/client";
+
+import "@splidejs/react-splide/css";
+
+interface Props {
+  cssClasses?: string;
+  HeadlessTestimonials?: [
+    {
+      testimonials: {
+        name: string;
+        location: string;
+        testimonial: string;
+      };
+      id: string;
+    }
+  ];
+}
+
+export default function Home({ HeadlessTestimonials }: Props) {
   return (
     <div className="bg-beige">
       <Header />
@@ -42,7 +62,7 @@ export default function Home() {
         ></div>
         <div className="tablet:grid grid-cols-1 desktop:grid-cols-2 gap-8 my-24">
           <Fees cssClasses="hidden desktop:flex flex-col" />
-          <Testimonials />
+          <Testimonials Testimonials={HeadlessTestimonials} />
         </div>
       </Layout>
       <div id="contact" className="-translate-y-32"></div>
@@ -52,4 +72,28 @@ export default function Home() {
       </Layout>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      query Testimonials {
+        posts {
+          nodes {
+            testimonials {
+              location
+              name
+              testimonial
+            }
+            id
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: { HeadlessTestimonials: data.posts.nodes },
+    revalidate: 15,
+  };
 }

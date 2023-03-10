@@ -6,13 +6,21 @@ import icon from "public/graphics/medicine.png";
 
 import "@splidejs/react-splide/css";
 
-import testimonialsList from "../data/testimonials-test-data.json";
-
 interface Props {
   cssClasses?: string;
+  Testimonials?: [
+    {
+      testimonials: {
+        name: string;
+        location: string;
+        testimonial: string;
+      };
+      id: string;
+    }
+  ];
 }
 
-const Testimonials = ({ cssClasses }: Props) => {
+const Testimonials = ({ cssClasses, Testimonials }: Props) => {
   return (
     <article className={`${cssClasses}`}>
       <div className="flex flex-col gap-6 tablet:gap-4 tablet:flex-row items-center tablet:place-self-start">
@@ -28,37 +36,54 @@ const Testimonials = ({ cssClasses }: Props) => {
       <Splide
         options={{
           arrows: false,
-          height: "12rem",
+          height: "13rem",
           direction: "ttb",
           autoplay: true,
+          speed: 2000,
           type: "loop",
           wheel: true,
           rewind: true,
+          pauseOnHover: true,
           breakpoints: {
+            350: {
+              height: "20.5rem",
+            },
+            400: {
+              height: "18.5rem",
+            },
+            550: {
+              height: "15.5rem",
+            },
+            700: {
+              height: "14.5rem",
+            },
+            900: { height: "13.5rem" },
+            1050: { height: "14rem" },
             1300: {
-              height: "14rem",
+              height: "13rem",
             },
           },
         }}
         className="border-y-2 border-black"
       >
-        {testimonialsList.map(({ quote, name, location }, index) => (
-          <SplideSlide
-            key={index}
-            className="flex justify-center items-center tablet:justify-start"
-          >
-            <div className="pr-10">
-              <blockquote className="italic mb-4">
-                &quot;{quote}&quot;
-              </blockquote>
-              <p className="font-normal">{name}</p>
-              <p className="font-thin">{location}</p>
-            </div>
-          </SplideSlide>
-        ))}
+        {Testimonials?.map(
+          ({ testimonials: { location, name, testimonial }, id }) => (
+            <SplideSlide
+              key={id}
+              className="flex justify-center items-center tablet:justify-start"
+            >
+              <div className="pr-10">
+                <blockquote className="italic mb-4">
+                  &quot;{testimonial}&quot;
+                </blockquote>
+                <p className="font-normal">{name}</p>
+                <p className="font-thin">{location}</p>
+              </div>
+            </SplideSlide>
+          )
+        )}
       </Splide>
     </article>
   );
 };
-
 export default Testimonials;
