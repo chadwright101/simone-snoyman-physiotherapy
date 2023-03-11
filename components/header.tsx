@@ -11,7 +11,8 @@ import logo from "../public/logos/simone-snoyman-physiotherapy-logo.png";
 import menuIcon from "../public/icons/menu-icon.svg";
 import closeIcon from "../public/icons/close-icon.svg";
 
-import menuList from "../data/menuList.json";
+import mobileMenuList from "../data/mobileMenuList.json";
+import desktopMenuList from "../data/desktopMenuList.json";
 
 interface Props {
   cssClasses?: string;
@@ -117,12 +118,12 @@ const Header = ({ cssClasses }: Props) => {
               style={mobileMenuToggle}
               className="flex flex-col font-lato font-extralight text-[1.5rem] text-white w-full"
             >
-              {menuList.map(({ title, url }, index) => (
+              {mobileMenuList.map(({ title, url }, index) => (
                 <li onClick={() => setMenuToggle(!menuToggle)} key={index}>
                   <Link href={url} className="px-3 -ml-3 transform">
                     {title}
                   </Link>
-                  {index < menuList.length - 1 && (
+                  {index < mobileMenuList.length - 1 && (
                     <div className="h-px my-4 bg-white w-[90%]"></div>
                   )}
                 </li>
@@ -149,7 +150,7 @@ const Header = ({ cssClasses }: Props) => {
           })}
         >
           <ul className="flex gap-5 text-paragraph font-extralight">
-            {menuList.map(({ title, url }, index) => (
+            {desktopMenuList.map(({ title, url }, index) => (
               <li key={index} className="hover:text-blue">
                 <Link href={url}>{title}</Link>
               </li>

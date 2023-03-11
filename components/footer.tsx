@@ -5,7 +5,7 @@ import logo from "../public/logos/simone-snoyman-physiotherapy-logo.png";
 import logo1 from "public/logos/hpcsa-logo.png";
 import logo2 from "public/logos/sasp-logo.jpg";
 
-import menuList from "../data/menuList.json";
+import desktopMenuList from "../data/desktopMenuList.json";
 
 interface Props {
   cssClasses?: string;
@@ -42,6 +42,16 @@ const Footer = ({ cssClasses }: Props) => {
             www.simonesnoymanphysiotherapy.co.za
           </Link>
         </div>
+        <p className="font-thin text-[1rem] text-center">
+          Designed & developed by{" "}
+          <Link
+            className="font-thin text-[1rem] text-blue hover:underline underline-offset-4 decoration-1 decoration-blue"
+            href="https://www.thewrightdesigns.co.za"
+            target="_blank"
+          >
+            The Wright Designs
+          </Link>
+        </p>
       </div>
 
       {/* desktop view */}
@@ -49,7 +59,7 @@ const Footer = ({ cssClasses }: Props) => {
         <div className="flex justify-between w-full">
           <nav>
             <ul className="flex flex-col gap-1 font-thin text-[1rem]">
-              {menuList.map(({ title, url }, index) => (
+              {desktopMenuList.map(({ title, url }, index) => (
                 <li key={index}>
                   <Link
                     href={url}
@@ -92,15 +102,27 @@ const Footer = ({ cssClasses }: Props) => {
             </Link>
           </div>
         </div>
-        <p className="font-thin text-[1rem]">
-          © Simone Snoyman Physiotherapy, Plettenberg Bay |{` `}
-          <Link
-            href="/"
-            className="font-thin text-[1rem] text-blue hover:underline underline-offset-4 decoration-1 decoration-blue"
-          >
-            www.simonesnoymanphysiotherapy.co.za
-          </Link>
-        </p>
+        <div className="flex justify-between w-full">
+          <p className="font-thin text-[1rem] flex flex-col">
+            © Simone Snoyman Physiotherapy, Plettenberg Bay
+            <Link
+              href="/"
+              className="font-thin text-[1rem] text-blue hover:underline underline-offset-4 decoration-1 decoration-blue"
+            >
+              www.simonesnoymanphysiotherapy.co.za
+            </Link>
+          </p>
+          <p className="font-thin text-[1rem]">
+            Designed & developed by{" "}
+            <Link
+              className="font-thin text-[1rem] text-blue hover:underline underline-offset-4 decoration-1 decoration-blue"
+              href="https://www.thewrightdesigns.co.za"
+              target="_blank"
+            >
+              The Wright Designs
+            </Link>
+          </p>
+        </div>
       </div>
     </footer>
   );

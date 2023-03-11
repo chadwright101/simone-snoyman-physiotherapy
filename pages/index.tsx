@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import About1 from "@/components/about-1";
 import About2 from "@/components/about-2";
 import Conditions from "@/components/conditions";
@@ -7,12 +9,55 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Layout from "@/components/layout";
-import Testimonials from "@/components/testimonials";
 import Treatments from "@/components/treatments";
+import Testimonials from "@/components/testimonials";
 
-export default function Home() {
+import client from "../components/utils/client";
+
+import { gql } from "@apollo/client";
+
+import "@splidejs/react-splide/css";
+
+interface Props {
+  cssClasses?: string;
+  HeadlessTestimonials?: [
+    {
+      testimonials: {
+        name: string;
+        location: string;
+        testimonial: string;
+      };
+      id: string;
+    }
+  ];
+}
+
+export default function Home({ HeadlessTestimonials }: Props) {
   return (
     <div className="bg-beige">
+      <Head>
+        <title>Simone Snoyman Physiotherapy - Plettenberg Bay</title>
+        <meta
+          name="description"
+          content="I am inspired and motivated with a passion for helping people. Having a hearing impairment, myself and wearing bilateral hearing aids since the age of 3, I have a unique understanding on the challenges that people with disabilities face."
+        />
+        <meta
+          name="keywords"
+          content="physiotherapy, physio, plettenberg bay, plett, plett physio, plett physiotherapy, garden route"
+        />
+        <meta property="og:image" content="" />
+        <meta property="og:title" content="Simone Snoyman Physiotherapy" />
+        <meta
+          property="og:url"
+          content="https://www.simonesnoymanphysiotherapy.co.za"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content="I am inspired and motivated with a passion for helping people. Having a hearing impairment, myself and wearing bilateral hearing aids since the age of 3, I have a unique understanding on the challenges that people with disabilities face."
+        />
+        <meta property="og:site_name" content="Simone Snoyman Physiotherapy" />
+      </Head>
       <Header />
       <Hero />
       <Layout>
@@ -37,12 +82,13 @@ export default function Home() {
           <About2 />
         </div>
         <div
-          id="fees"
-          className="hidden desktop:block desktop:-translate-y-14"
+          id="fees-testimonials"
+          className="hidden desktop:block -translate-y-14"
         ></div>
         <div className="tablet:grid grid-cols-1 desktop:grid-cols-2 gap-8 my-24">
           <Fees cssClasses="hidden desktop:flex flex-col" />
-          <Testimonials />
+
+          <Testimonials Testimonials={HeadlessTestimonials} />
         </div>
       </Layout>
       <div id="contact" className="-translate-y-32"></div>
@@ -52,4 +98,28 @@ export default function Home() {
       </Layout>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const { data } = await client.query({
+    query: gql`
+      query Testimonials {
+        posts {
+          nodes {
+            testimonials {
+              location
+              name
+              testimonial
+            }
+            id
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: { HeadlessTestimonials: data.posts.nodes },
+    revalidate: 15,
+  };
 }
