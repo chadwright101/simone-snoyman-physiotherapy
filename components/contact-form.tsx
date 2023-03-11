@@ -17,7 +17,7 @@ const ContactForm = ({ cssClasses }: Props) => {
         Please fill in the form below and I will get back to you.
       </p>
       <form
-        action="https://formsubmit.co/snoymanphysio@gmail.com"
+        action="https://formsubmit.co/59f8e226cb88b0752db1acc8ce63bcff"
         method="POST"
         className="flex flex-col gap-10 desktop:gap-6"
       >
