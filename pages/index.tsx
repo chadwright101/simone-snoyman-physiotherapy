@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import About1 from "@/components/about-1";
 import About2 from "@/components/about-2";
 import Conditions from "@/components/conditions";
@@ -33,6 +35,29 @@ interface Props {
 export default function Home({ HeadlessTestimonials }: Props) {
   return (
     <div className="bg-beige">
+      <Head>
+        <title>Simone Snoyman Physiotherapy - Plettenberg Bay</title>
+        <meta
+          name="description"
+          content="I am inspired and motivated with a passion for helping people. Having a hearing impairment, myself and wearing bilateral hearing aids since the age of 3, I have a unique understanding on the challenges that people with disabilities face."
+        />
+        <meta
+          name="keywords"
+          content="physiotherapy, physio, plettenberg bay, plett, plett physio, plett physiotherapy, garden route"
+        />
+        <meta property="og:image" content="" />
+        <meta property="og:title" content="Simone Snoyman Physiotherapy" />
+        <meta
+          property="og:url"
+          content="https://www.simonesnoymanphysiotherapy.co.za"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content="I am inspired and motivated with a passion for helping people. Having a hearing impairment, myself and wearing bilateral hearing aids since the age of 3, I have a unique understanding on the challenges that people with disabilities face."
+        />
+        <meta property="og:site_name" content="Simone Snoyman Physiotherapy" />
+      </Head>
       <Header />
       <Hero />
       <Layout>
@@ -57,11 +82,12 @@ export default function Home({ HeadlessTestimonials }: Props) {
           <About2 />
         </div>
         <div
-          id="fees"
-          className="hidden desktop:block desktop:-translate-y-14"
+          id="fees-testimonials"
+          className="hidden desktop:block -translate-y-14"
         ></div>
         <div className="tablet:grid grid-cols-1 desktop:grid-cols-2 gap-8 my-24">
           <Fees cssClasses="hidden desktop:flex flex-col" />
+
           <Testimonials Testimonials={HeadlessTestimonials} />
         </div>
       </Layout>
