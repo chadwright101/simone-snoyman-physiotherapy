@@ -16,7 +16,12 @@ const ContactForm = ({ cssClasses }: Props) => {
       <p className="italic font-thin text-white">
         Please fill in the form below and I will get back to you.
       </p>
-      <form action="" className="flex flex-col gap-10 desktop:gap-6">
+      <form
+        action="https://formsubmit.co/snoymanphysio@gmail.com"
+        method="POST"
+        className="flex flex-col gap-10 desktop:gap-6"
+      >
+        <input type="text" name="_honey" className="hidden"></input>
         <div className="flex flex-col gap-6 desktop:gap-2">
           <label htmlFor="name" className=" text-paragraph text-white">
             Name:
@@ -44,7 +49,7 @@ const ContactForm = ({ cssClasses }: Props) => {
               Email:
             </label>
             <input
-              type="text"
+              type="email"
               id="email"
               name="email"
               required
