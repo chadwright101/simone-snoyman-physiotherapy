@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "http://simonesnoymanphysiotherapy.co.za/graphql",
+  uri: "http://wordpress.simonesnoymanphysiotherapy.co.za/graphql",
   cache: new InMemoryCache(),
 });
 
