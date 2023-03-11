@@ -21,7 +21,12 @@ const ContactForm = ({ cssClasses }: Props) => {
         method="POST"
         className="flex flex-col gap-10 desktop:gap-6"
       >
-        <input type="text" name="_honey" className="hidden"></input>
+        <input type="text" name="_honey" className="hidden" />
+        <input
+          type="hidden"
+          name="_subject"
+          value="Simone Snoyman Phisiotherapy - Reply to website form message"
+        />
         <div className="flex flex-col gap-6 desktop:gap-2">
           <label htmlFor="name" className=" text-paragraph text-white">
             Name:
