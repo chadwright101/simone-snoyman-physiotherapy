@@ -45,7 +45,10 @@ export default function Home({ HeadlessTestimonials }: Props) {
           name="keywords"
           content="physiotherapy, physio, plettenberg bay, plett, plett physio, plett physiotherapy, garden route"
         />
-        <meta property="og:image" content="" />
+        <meta
+          property="og:image"
+          content="https://www.simonesnoymanphysiotherapy.co.za/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsimone-snoyman-physiotherapy-logo.549543b3.png&w=1920&q=75"
+        />
         <meta property="og:title" content="Simone Snoyman Physiotherapy" />
         <meta
           property="og:url"
@@ -57,6 +60,7 @@ export default function Home({ HeadlessTestimonials }: Props) {
           content="I am inspired and motivated with a passion for helping people. Having a hearing impairment, myself and wearing bilateral hearing aids since the age of 3, I have a unique understanding on the challenges that people with disabilities face."
         />
         <meta property="og:site_name" content="Simone Snoyman Physiotherapy" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"></link>
       </Head>
       <Header />
       <Hero />
