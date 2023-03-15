@@ -38,7 +38,7 @@ const Testimonials = ({ cssClasses, Testimonials }: Props) => {
           arrows: false,
           height: "13rem",
           direction: "ttb",
-          autoplay: true,
+          autoplay: false,
           speed: 2000,
           type: "loop",
           wheel: true,
@@ -68,10 +68,7 @@ const Testimonials = ({ cssClasses, Testimonials }: Props) => {
       >
         {Testimonials?.map(
           ({ testimonials: { location, name, testimonial }, id }) => (
-            <SplideSlide
-              key={id}
-              className="flex justify-center items-center tablet:justify-start"
-            >
+            <SplideSlide key={id} className="flex items-center">
               <div className="pr-10">
                 <blockquote className="italic mb-4">
                   &quot;{testimonial}&quot;
