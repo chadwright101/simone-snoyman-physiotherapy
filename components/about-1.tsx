@@ -29,6 +29,7 @@ const About1 = ({ cssClasses }: Props) => {
         <p className="font-normal text-white bg-blue py-6 text-center my-16 tablet:order-3 tablet:my-0">
           PR No. 072 000 0272329
         </p>
+        <div id="about-mobile" className="-translate-y-36"></div>
         <div className="tablet:order-1 place-self-start">
           <p className="mb-4">
             At Simone Snoyman Physiotherapy we believe in a “hands-on” approach.
