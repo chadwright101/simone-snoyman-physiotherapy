@@ -10,8 +10,8 @@ interface Props {
 const About1 = ({ cssClasses }: Props) => {
   return (
     <article className={`${cssClasses}`}>
-      <div className="grid grid-cols-1 items-center tablet:grid-cols-[75%_25%] gap-x-6">
-        <div className="flex flex-col tablet:flex-col gap-10 items-center tablet:order-2 tablet:row-span-2 tablet:place-self-start desktop:gap-5">
+      <div className="grid grid-cols-1 items-center tablet:grid-cols-[75%_25%] tablet:grid-rows-2 gap-x-6">
+        <div className="flex flex-col tablet:flex-col gap-10 items-center tablet:col-start-2 tablet:row-span-2 tablet:place-self-start desktop:gap-5">
           <p className="text-left">Proudly registered with:</p>
           <div className="flex flex-wrap items-center gap-10 justify-center desktop:gap-5">
             <Image
@@ -26,11 +26,11 @@ const About1 = ({ cssClasses }: Props) => {
             />
           </div>
         </div>
-        <p className="font-normal text-white bg-blue py-6 text-center my-16 tablet:order-3 tablet:my-0">
+        <p className="font-normal text-white bg-blue py-6 text-center my-16 tablet:my-0 tablet:col-start-1">
           PR No. 072 000 0272329
         </p>
         <div id="about-mobile" className="-translate-y-36"></div>
-        <div className="tablet:order-1 place-self-start">
+        <div className="tablet:col-start-1 tablet:row-start-1 place-self-start">
           <p className="mb-4">
             At Simone Snoyman Physiotherapy we believe in a “hands-on” approach.
           </p>
