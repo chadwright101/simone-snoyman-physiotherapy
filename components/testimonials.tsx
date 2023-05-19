@@ -2,8 +2,6 @@ import Image from "next/image";
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-import icon from "public/graphics/medicine.png";
-
 import "@splidejs/react-splide/css";
 
 interface Props {
@@ -25,9 +23,11 @@ const Testimonials = ({ cssClasses, Testimonials }: Props) => {
     <article className={`${cssClasses}`}>
       <div className="flex flex-col gap-6 tablet:gap-4 tablet:flex-row items-center tablet:place-self-start">
         <Image
-          src={icon}
+          src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/graphics/medicine.png"
           alt="Medicine bottle icon"
           className="h-20 tablet:h-[52px] tablet:-mt-10 w-auto"
+          width={80}
+          height={120}
         />
         <h2 className="text-heading uppercase font-bebas_neue text-center mb-10">
           Testimonials

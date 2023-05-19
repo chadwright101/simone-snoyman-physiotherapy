@@ -1,8 +1,5 @@
 import Image from "next/image";
 
-import logo1 from "public/logos/hpcsa-logo.png";
-import logo2 from "public/logos/sasp-logo.jpg";
-
 interface Props {
   cssClasses?: string;
 }
@@ -15,14 +12,18 @@ const About1 = ({ cssClasses }: Props) => {
           <p className="text-left">Proudly registered with:</p>
           <div className="flex flex-wrap items-center gap-10 justify-center desktop:gap-5">
             <Image
-              src={logo1}
+              src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/logos/hpcsa-logo.png"
               alt="HPCSA logo"
               className="max-w-[175px] h-auto bg-white p-3"
+              width={175}
+              height={150}
             />
             <Image
-              src={logo2}
+              src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/logos/sasp-logo.jpg"
               alt="SASP logo"
               className="max-w-[175px] h-auto bg-white p-3"
+              width={175}
+              height={150}
             />
           </div>
         </div>

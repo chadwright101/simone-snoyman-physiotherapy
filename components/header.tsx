@@ -7,7 +7,6 @@ import useScrollPosition from "./utils/scroll-position";
 import classNames from "classnames";
 import { useSpring, animated } from "@react-spring/web";
 
-import logo from "../public/logos/simone-snoyman-physiotherapy-logo.png";
 import menuIcon from "../public/icons/menu-icon.svg";
 import closeIcon from "../public/icons/close-icon.svg";
 
@@ -61,7 +60,7 @@ const Header = ({ cssClasses }: Props) => {
             <animated.div style={logoLoadAnimate}>
               <Link href="/" className="flex gap-4 items-center">
                 <Image
-                  src={logo}
+                  src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/logos/simone-snoyman-physiotherapy-logo.png"
                   alt="Simone Snoyman Physiontherapy logo"
                   className={classNames(
                     "hidden phoneTiny:block w-[50px] phoneSmall:w-[100px] h-auto tablet:w-[60px]",
@@ -70,6 +69,8 @@ const Header = ({ cssClasses }: Props) => {
                         scrollPosition > 100,
                     }
                   )}
+                  width={100}
+                  height={150}
                 />
                 <div
                   className={classNames("transform", {
