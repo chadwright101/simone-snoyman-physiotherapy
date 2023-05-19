@@ -1,9 +1,5 @@
 import Image from "next/image";
 
-import image1 from "public/about-2/adult-male-starting-recovery-plan.jpg";
-import image2 from "public/about-2/back-view-dark-haired-bearded-geriatrician-auscultating-lungs-gray-haired-caucasian-patient.jpg";
-import icon from "public/graphics/medicine bag.png";
-
 interface Props {
   cssClasses?: string;
 }
@@ -13,9 +9,11 @@ const About2 = ({ cssClasses }: Props) => {
     <main className={`${cssClasses}`}>
       <div className="flex flex-col gap-6 tablet:gap-4 tablet:flex-row items-center tablet:place-self-start">
         <Image
-          src={icon}
+          src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/graphics/medicine+bag.png"
           alt="Medicine bottle icon"
           className="h-20 tablet:h-[52px] tablet:-mt-12 w-auto"
+          height={80}
+          width={80}
         />
         <h2 className="text-heading uppercase font-bebas_neue text-center mb-10 tablet:text-left">
           Who am I?
@@ -56,14 +54,18 @@ const About2 = ({ cssClasses }: Props) => {
         </div>
         <div className="grid gap-8 tablet:grid-cols-2 desktop:grid-cols-1 desktop:place-content-start">
           <Image
-            src={image1}
+            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/about-2/adult-male-starting-recovery-plan.jpg"
             alt=""
             className="h-72 object-cover phoneLarge:h-96 desktop:h-[335px] desktopLarge:h-[275px] object-left-top"
+            height={400}
+            width={680}
           />
           <Image
-            src={image2}
+            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/about-2/back-view-dark-haired-bearded-geriatrician-auscultating-lungs-gray-haired-caucasian-patient.jpg"
             alt=""
             className="h-72 object-cover phoneLarge:h-96 desktop:h-[335px] desktopLarge:h-[275px]"
+            height={400}
+            width={680}
           />
         </div>
       </div>

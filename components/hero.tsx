@@ -29,18 +29,21 @@ const Hero = ({ cssClasses }: Props) => {
               pagination: false,
             },
           },
-          drag: false,
+          dragMinThreshold: 10,
         }}
       >
         {heroImages.map(({ src, alt, loading, position }, index) => (
-          <SplideSlide key={index}>
+          <SplideSlide
+            key={index}
+            className="w-full phoneSmall:pt-[177px] h-[600px] phoneLarge:h-[700px] desktop:h-[800px]"
+          >
             <Image
               src={src}
               alt={alt}
-              width={1400}
-              height={700}
-              className={`w-full object-cover pt-[125px] phoneSmall:pt-[177px] h-screen phoneLarge:h-[700px] tablet:pt-[126px] desktop:h-[800px] ${position}`}
+              className={`object-cover pt-[125px] tablet:pt-[126px] ${position}`}
               loading={loading ? "eager" : "lazy"}
+              fill
+              sizes="(max-width: 500px) 750px"
             />
           </SplideSlide>
         ))}

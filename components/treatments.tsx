@@ -1,8 +1,5 @@
 import Image from "next/image";
 
-import image from "public/treatments/doctor-examining-female-patient-stomach.jpg";
-import icon from "public/graphics/large medicine.png";
-
 import treatmentList from "../data/treatments.json";
 
 interface Props {
@@ -16,9 +13,11 @@ const Treatments = ({ cssClasses }: Props) => {
     >
       <div className="flex flex-col gap-6 tablet:gap-4 tablet:flex-row items-center tablet:place-self-start">
         <Image
-          src={icon}
+          src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/graphics/large+medicine.png"
           alt="Medicine bottle icon"
           className="h-20 tablet:h-[52px] tablet:-mt-1 w-auto"
+          height={80}
+          width={80}
         />
         <h2 className="text-heading uppercase font-bebas_neue text-center tablet:place-self-start">
           Treatment Techniques
@@ -38,9 +37,11 @@ const Treatments = ({ cssClasses }: Props) => {
         areas.
       </p>
       <Image
-        src={image}
+        src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/treatments/doctor-examining-female-patient-stomach.jpg"
         alt=""
         className="max-w-[200px] h-[200px] object-cover rounded-full phoneLarge:hidden"
+        width={200}
+        height={200}
       />
     </article>
   );
