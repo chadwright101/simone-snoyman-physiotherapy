@@ -14,16 +14,16 @@ const About1 = ({ cssClasses }: Props) => {
             <Image
               src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/logos/hpcsa-logo.png"
               alt="HPCSA logo"
-              className="max-w-[175px] h-auto bg-white p-3"
+              className="bg-white p-3 max-w-[175px]"
               width={175}
-              height={150}
+              height={84}
             />
             <Image
               src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/logos/sasp-logo.jpg"
               alt="SASP logo"
               className="max-w-[175px] h-auto bg-white p-3"
               width={175}
-              height={150}
+              height={140}
             />
           </div>
         </div>

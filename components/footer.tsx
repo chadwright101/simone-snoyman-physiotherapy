@@ -17,7 +17,8 @@ const Footer = ({ cssClasses }: Props) => {
           alt="Simone Snoyman Physiotherapy"
           className="w-[106px] h-auto"
           width={106}
-          height={200}
+          height={140}
+          sizes="(max-width: 400px) 50vw, (max-width: 900px) 15vw,  10vw"
         />
         <p className="font-thin text-[1rem] mb-4">PR No. 072 000 0272329</p>
         <div className="flex flex-wrap justify-center items-center gap-6">
@@ -26,14 +27,14 @@ const Footer = ({ cssClasses }: Props) => {
             alt="SASP logo"
             className="max-w-[175px] h-auto bg-white p-3"
             width={175}
-            height={240}
+            height={140}
           />
           <Image
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/logos/hpcsa-logo.png"
             alt="HPCSA logo"
             className="max-w-[175px] h-auto bg-white p-3"
             width={175}
-            height={100}
+            height={85}
           />
         </div>
         <div className="flex flex-col items-center mt-4">

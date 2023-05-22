@@ -17,7 +17,7 @@ const Treatments = ({ cssClasses }: Props) => {
           alt="Medicine bottle icon"
           className="h-20 tablet:h-[52px] tablet:-mt-1 w-auto"
           height={80}
-          width={80}
+          width={43}
         />
         <h2 className="text-heading uppercase font-bebas_neue text-center tablet:place-self-start">
           Treatment Techniques
@@ -41,7 +41,7 @@ const Treatments = ({ cssClasses }: Props) => {
         alt=""
         className="max-w-[200px] h-[200px] object-cover rounded-full phoneLarge:hidden"
         width={200}
-        height={200}
+        height={250}
       />
     </article>
   );

@@ -17,7 +17,7 @@ const Conditions = ({ cssClasses }: Props) => {
           alt="Medicine bottle icon"
           className="h-20 tablet:h-[52px] tablet:-mt-1 w-auto"
           height={80}
-          width={80}
+          width={50}
         />
         <h2 className="text-heading uppercase font-bebas_neue text-center phoneLarge:text-left">
           Conditions That we treat
@@ -27,7 +27,7 @@ const Conditions = ({ cssClasses }: Props) => {
         src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/conditions/close-up-woman-pain.jpg"
         alt=""
         className="max-w-[200px] h-[200px] object-cover rounded-full desktop:place-self-end phoneLarge:row-span-2 object-right phoneLarge:col-start-2 tablet:col-auto"
-        width={200}
+        width={250}
         height={200}
       />
       <ul className="list-disc ml-8 place-self-start phoneSmall:place-self-center phoneLarge:place-self-end tablet:place-self-start phoneLarge:row-span-2 tablet:row-span-3 text-left phoneSmall:text-justify ">
