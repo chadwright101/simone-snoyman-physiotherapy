@@ -22,7 +22,7 @@ const Contact = ({ cssClasses }: Props) => {
             src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/graphics/stethoscope.png"
             alt="Medicine bottle icon"
             className="h-20 tablet:h-[52px] tablet:-mt-12 w-auto desktop:hidden"
-            width={80}
+            width={60}
             height={80}
           />
           <h2 className="text-heading uppercase font-bebas_neue text-center tablet:text-left mb-10 desktop:text-white">
