@@ -44,28 +44,23 @@ const Header = ({ cssClasses }: Props) => {
 
   return (
     <header
-      className={`fixed w-full drop-shadow-md border-b-2 border-darkBlue bg-beige z-10 ${cssClasses}`}
+      className={`fixed w-full drop-shadow-md border-b-2 border-darkBlue bg-beige z-10 ease-in-out duration-500 ${
+        scrollPosition > 100 ? "-top-20 tablet:-top-12" : "top-0"
+      } ${cssClasses}`}
     >
       <div className="tablet:pr-[50px] justify-between items-end tablet:flex tablet:py-6 desktop:max-w-[1200px] desktopLarge:max-w-[1400px] desktop:mx-auto desktop:px-0">
         {!menuToggle && (
-          <div
-            className={classNames(
-              "px-[20px] tablet:pl-[50px] py-6 tablet:py-0 flex justify-between gap-3 phoneSmall:gap-6 desktop:px-0",
-              {
-                "h-[75px] tablet:h-[35px]": scrollPosition > 100,
-              }
-            )}
-          >
+          <div className="px-[20px] tablet:pl-[50px] py-6 tablet:py-0 flex justify-between gap-3 phoneSmall:gap-6 desktop:px-0">
             {/* logo */}
             <animated.div style={logoLoadAnimate}>
               <Link href="/" className="flex gap-4 items-center">
                 <Image
                   src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/logos/simone-snoyman-physiotherapy-logo.png"
-                  alt="Simone Snoyman Physiontherapy logo"
+                  alt="Simone Snoyman Physiotherapy logo"
                   className={classNames(
-                    "hidden phoneTiny:block w-[50px] phoneSmall:w-[100px] h-auto tablet:w-[60px]",
+                    "hidden phoneTiny:block w-[50px] phoneSmall:w-[100px] h-auto tablet:w-[60px] ease-in-out duration-500",
                     {
-                      "max-w-[38px] -translate-y-[24px] phoneSmall:-translate-y-[32px] tablet:max-w-[45px] tablet:translate-x-0 tablet:-translate-y-4":
+                      "scale-50 translate-y-10 tablet:scale-[70%] tablet:translate-y-[23px]":
                         scrollPosition > 100,
                     }
                   )}
@@ -73,7 +68,7 @@ const Header = ({ cssClasses }: Props) => {
                   height={150}
                 />
                 <div
-                  className={classNames("transform", {
+                  className={classNames("ease-in-out duration-200", {
                     "opacity-0": scrollPosition > 100,
                   })}
                 >
@@ -97,9 +92,9 @@ const Header = ({ cssClasses }: Props) => {
                 setMobileMenuToggle({ x: 0, opacity: 100 });
               }}
               className={classNames(
-                "h-16 w-16 grid place-items-center my-auto transform tablet:hidden",
+                "h-16 w-16 grid place-items-center my-auto transform tablet:hidden ease-in-out duration-500",
                 {
-                  "-translate-y-[17.5px]": scrollPosition > 100,
+                  "translate-y-10": scrollPosition > 100,
                 }
               )}
             >
@@ -114,7 +109,11 @@ const Header = ({ cssClasses }: Props) => {
 
         {/* mobile navigation */}
         {menuToggle && (
-          <nav className="bg-blue h-screen phoneLarge:h-auto flex justify-between pt-12 pb-8 pl-[30px] pr-[20px] tablet:hidden">
+          <nav
+            className={`bg-blue ${
+              scrollPosition > 100 ? "translate-y-20" : ""
+            } h-screen phoneLarge:h-auto flex justify-between pt-12 pb-8 pl-[30px] pr-[20px] tablet:hidden`}
+          >
             <animated.ul
               style={mobileMenuToggle}
               className="flex flex-col font-lato font-extralight text-[1.5rem] text-white w-full"
@@ -146,9 +145,12 @@ const Header = ({ cssClasses }: Props) => {
         {/* desktop navigation */}
 
         <nav
-          className={classNames("hidden tablet:block pb-1", {
-            "translate-y-[14px]": scrollPosition > 100,
-          })}
+          className={classNames(
+            "hidden tablet:block pb-1 ease-in-out duration-500",
+            {
+              "translate-y-[14px]": scrollPosition > 100,
+            }
+          )}
         >
           <ul className="flex gap-5 text-paragraph font-extralight">
             {desktopMenuList.map(({ title, url }, index) => (
