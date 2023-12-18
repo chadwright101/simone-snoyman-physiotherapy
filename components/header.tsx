@@ -45,7 +45,7 @@ const Header = ({ cssClasses }: Props) => {
   return (
     <header
       className={`fixed w-full drop-shadow-md border-b-2 border-darkBlue bg-beige z-10 ease-in-out duration-500 ${
-        scrollPosition > 100 ? "-top-20 tablet:-top-12" : "top-0"
+        scrollPosition > 100 ? "-top-10 tablet:-top-12" : "top-0"
       } ${cssClasses}`}
     >
       <div className="tablet:pr-[50px] justify-between items-end tablet:flex tablet:py-6 desktop:max-w-[1200px] desktopLarge:max-w-[1400px] desktop:mx-auto desktop:px-0">
@@ -60,7 +60,7 @@ const Header = ({ cssClasses }: Props) => {
                   className={classNames(
                     "hidden phoneTiny:block w-[50px] phoneSmall:w-[100px] h-auto tablet:w-[60px] ease-in-out duration-500",
                     {
-                      "scale-50 translate-y-10 tablet:scale-[70%] tablet:translate-y-[23px]":
+                      "scale-[70%] translate-y-5 tablet:scale-[70%] tablet:translate-y-[23px]":
                         scrollPosition > 100,
                     }
                   )}
@@ -94,7 +94,7 @@ const Header = ({ cssClasses }: Props) => {
               className={classNames(
                 "h-16 w-16 grid place-items-center my-auto transform tablet:hidden ease-in-out duration-500",
                 {
-                  "translate-y-10": scrollPosition > 100,
+                  "translate-y-[21px]": scrollPosition > 100,
                 }
               )}
             >
@@ -111,7 +111,7 @@ const Header = ({ cssClasses }: Props) => {
         {menuToggle && (
           <nav
             className={`bg-blue ${
-              scrollPosition > 100 ? "translate-y-20" : ""
+              scrollPosition > 100 ? "translate-y-10" : ""
             } h-screen phoneLarge:h-auto flex justify-between pt-12 pb-8 pl-[30px] pr-[20px] tablet:hidden`}
           >
             <animated.ul
