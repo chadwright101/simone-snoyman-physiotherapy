@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.9.5",
-    "@next/font": "14.1.0",
+    "@next/font": "14.1.4",
     "@react-spring/web": "^9.6.1",
     "@splidejs/react-splide": "^0.7.12",
     "@types/node": "20.12.2",
