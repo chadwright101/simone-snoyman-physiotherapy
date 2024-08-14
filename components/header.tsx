@@ -55,7 +55,7 @@ const Header = ({ cssClasses }: Props) => {
             <animated.div style={logoLoadAnimate}>
               <Link href="/" className="flex gap-4 items-center">
                 <Image
-                  src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/logos/simone-snoyman-physiotherapy-logo.png"
+                  src="/assets/logos/simone-snoyman-physiotherapy-logo.png"
                   alt="Simone Snoyman Physiotherapy logo"
                   className={classNames(
                     "hidden phoneTiny:block w-[50px] phoneSmall:w-[100px] h-auto tablet:w-[60px] ease-in-out duration-500",

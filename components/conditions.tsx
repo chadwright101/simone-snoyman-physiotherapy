@@ -13,7 +13,7 @@ const Conditions = ({ cssClasses }: Props) => {
     >
       <div className="flex flex-col gap-6 tablet:gap-4 tablet:flex-row items-center tablet:place-self-start phoneLarge:col-span-2 phoneLarge:place-self-center tablet:col-auto">
         <Image
-          src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/graphics/glass+jar.png"
+          src="/assets/graphics/glass-jar.png"
           alt="Medicine bottle icon"
           className="h-20 tablet:h-[52px] tablet:-mt-1 w-auto"
           height={80}
@@ -24,7 +24,7 @@ const Conditions = ({ cssClasses }: Props) => {
         </h2>
       </div>
       <Image
-        src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/conditions/close-up-woman-pain.jpg"
+        src="/assets/conditions/close-up-woman-pain.jpg"
         alt=""
         className="max-w-[200px] h-[200px] object-cover rounded-full desktop:place-self-end phoneLarge:row-span-2 object-right phoneLarge:col-start-2 tablet:col-auto"
         width={250}
@@ -36,7 +36,7 @@ const Conditions = ({ cssClasses }: Props) => {
         ))}
       </ul>
       <Image
-        src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/conditions/man-holds-his-back-due-pain.jpg"
+        src="/assets/conditions/man-holds-his-back-due-pain.jpg"
         alt=""
         className="max-w-[200px] h-[200px] desktop:place-self-end object-cover rounded-full tablet:col-start-2 phoneLarge:row-span-2 object-right -scale-x-100 phoneLarge:col-start-2 tablet:col-auto"
         width={200}

@@ -13,7 +13,7 @@ const Fees = ({ cssClasses }: Props) => {
     >
       <div className="flex flex-col gap-6 tablet:gap-4 tablet:flex-row tablet:items-center tablet:place-self-start">
         <Image
-          src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/graphics/clipboard.png"
+          src="/assets/graphics/clipboard.png"
           alt="Clipboard icon"
           className="h-20 tablet:h-[52px] tablet:-mt-1 w-auto"
           width={60}

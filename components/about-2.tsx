@@ -9,7 +9,7 @@ const About2 = ({ cssClasses }: Props) => {
     <main className={`${cssClasses}`}>
       <div className="flex flex-col gap-6 tablet:gap-4 tablet:flex-row items-center tablet:place-self-start">
         <Image
-          src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/graphics/medicine+bag.png"
+          src="/assets/graphics/medicine-bag.png"
           alt="Medicine bottle icon"
           className="h-20 tablet:h-[52px] tablet:-mt-12 w-auto"
           height={80}
@@ -54,7 +54,7 @@ const About2 = ({ cssClasses }: Props) => {
         </div>
         <div className="grid gap-8 tablet:grid-cols-2 desktop:grid-cols-1 desktop:place-content-start">
           <Image
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/about-2/adult-male-starting-recovery-plan.jpg"
+            src="/assets/about-2/adult-male-starting-recovery-plan.jpg"
             alt=""
             className="h-72 object-cover phoneLarge:h-96 desktop:h-[335px] desktopLarge:h-[275px] object-left-top"
             height={400}
@@ -62,7 +62,7 @@ const About2 = ({ cssClasses }: Props) => {
             sizes="(max-width: 400px) 75vw, (max-width: 600px) 75vw, (max-width: 900px) 25vw, (max-width: 1300px) 50vw, 50vw"
           />
           <Image
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/about-2/back-view-dark-haired-bearded-geriatrician-auscultating-lungs-gray-haired-caucasian-patient.jpg"
+            src="/assets/about-2/back-view-dark-haired-bearded-geriatrician-auscultating-lungs-gray-haired-caucasian-patient.jpg"
             alt=""
             className="h-72 object-cover phoneLarge:h-96 desktop:h-[335px] desktopLarge:h-[275px]"
             height={400}

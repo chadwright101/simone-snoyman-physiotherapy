@@ -19,7 +19,7 @@ const Contact = ({ cssClasses }: Props) => {
       <div className="px-[20px] tablet:px-[50px] desktop:px-0 desktop:max-w-[1200px] desktopLarge:max-w-[1400px] desktop:mx-auto">
         <div className="flex flex-col gap-6 tablet:gap-4 tablet:flex-row items-center tablet:place-self-start phoneLarge:place-self-start">
           <Image
-            src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/graphics/stethoscope.png"
+            src="/assets/graphics/stethoscope.png"
             alt="Medicine bottle icon"
             className="h-20 tablet:h-[52px] tablet:-mt-12 w-auto desktop:hidden"
             width={60}

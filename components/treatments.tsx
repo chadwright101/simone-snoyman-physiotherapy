@@ -13,7 +13,7 @@ const Treatments = ({ cssClasses }: Props) => {
     >
       <div className="flex flex-col gap-6 tablet:gap-4 tablet:flex-row items-center tablet:place-self-start">
         <Image
-          src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/graphics/large+medicine.png"
+          src="/assets/graphics/large-medicine.png"
           alt="Medicine bottle icon"
           className="h-20 tablet:h-[52px] tablet:-mt-1 w-auto"
           height={80}
@@ -37,7 +37,7 @@ const Treatments = ({ cssClasses }: Props) => {
         areas.
       </p>
       <Image
-        src="https://the-wright-designs-website-images.s3.af-south-1.amazonaws.com/simone-snoyman-physiotherapy/treatments/doctor-examining-female-patient-stomach.jpg"
+        src="/assets/treatments/doctor-examining-female-patient-stomach.jpg"
         alt=""
         className="max-w-[200px] h-[200px] object-cover rounded-full phoneLarge:hidden"
         width={200}
