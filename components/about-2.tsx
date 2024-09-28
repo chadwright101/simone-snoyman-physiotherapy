@@ -59,7 +59,6 @@ const About2 = ({ cssClasses }: Props) => {
             className="h-72 object-cover phoneLarge:h-96 desktop:h-[335px] desktopLarge:h-[275px] object-left-top"
             height={400}
             width={585}
-            sizes="(max-width: 400px) 75vw, (max-width: 600px) 75vw, (max-width: 900px) 25vw, (max-width: 1300px) 50vw, 50vw"
           />
           <Image
             src="/assets/about-2/back-view-dark-haired-bearded-geriatrician-auscultating-lungs-gray-haired-caucasian-patient.jpg"
@@ -67,7 +66,6 @@ const About2 = ({ cssClasses }: Props) => {
             className="h-72 object-cover phoneLarge:h-96 desktop:h-[335px] desktopLarge:h-[275px]"
             height={400}
             width={585}
-            sizes="(max-width: 400px) 75vw, (max-width: 600px) 75vw, (max-width: 900px) 50vw, (max-width: 1300px) 50vw, 100vw"
           />
         </div>
       </div>
