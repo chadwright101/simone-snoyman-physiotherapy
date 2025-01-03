@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
 import useScrollPosition from "./utils/scroll-position";
-
 import classNames from "classnames";
 import { useSpring, animated } from "@react-spring/web";
 
@@ -21,6 +19,9 @@ const Header = ({ cssClasses }: Props) => {
   const [menuToggle, setMenuToggle] = useState(false);
 
   const scrollPosition = useScrollPosition();
+
+  const AnimatedUl = animated("ul");
+  const AnimatedDiv = animated("div");
 
   const logoLoadAnimate = useSpring({
     from: { x: -750, opacity: 0 },
@@ -52,7 +53,7 @@ const Header = ({ cssClasses }: Props) => {
         {!menuToggle && (
           <div className="px-[20px] tablet:pl-[50px] py-6 tablet:py-0 flex justify-between gap-3 phoneSmall:gap-6 desktop:px-0">
             {/* logo */}
-            <animated.div style={logoLoadAnimate}>
+            <AnimatedDiv style={logoLoadAnimate}>
               <Link href="/" className="flex gap-4 items-center">
                 <Image
                   src="/assets/logos/simone-snoyman-physiotherapy-logo.png"
@@ -85,7 +86,7 @@ const Header = ({ cssClasses }: Props) => {
                   </h2>
                 </div>
               </Link>
-            </animated.div>
+            </AnimatedDiv>
             <button
               onClick={() => {
                 setMenuToggle(!menuToggle);
@@ -114,7 +115,7 @@ const Header = ({ cssClasses }: Props) => {
               scrollPosition > 100 ? "translate-y-10" : ""
             } h-screen phoneLarge:h-auto flex justify-between pt-12 pb-8 pl-[30px] pr-[20px] tablet:hidden`}
           >
-            <animated.ul
+            <AnimatedUl
               style={mobileMenuToggle}
               className="flex flex-col font-lato font-extralight text-[1.5rem] text-white w-full"
             >
@@ -128,7 +129,7 @@ const Header = ({ cssClasses }: Props) => {
                   )}
                 </li>
               ))}
-            </animated.ul>
+            </AnimatedUl>
             <button
               onClick={() => setMenuToggle(!menuToggle)}
               className="w-16 h-16 grid place-items-center -mt-2.5"
@@ -143,7 +144,6 @@ const Header = ({ cssClasses }: Props) => {
         )}
 
         {/* desktop navigation */}
-
         <nav
           className={classNames(
             "hidden tablet:block pb-1 ease-in-out duration-500",
