@@ -105,25 +105,32 @@ export default function Home({ HeadlessTestimonials }: Props) {
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      query Testimonials {
-        posts {
-          nodes {
-            testimonials {
-              location
-              name
-              testimonial
+  try {
+    const { data } = await client.query({
+      query: gql`
+        query Testimonials {
+          posts {
+            nodes {
+              testimonials {
+                location
+                name
+                testimonial
+              }
+              id
             }
-            id
           }
         }
-      }
-    `,
-  });
+      `,
+    });
 
-  return {
-    props: { HeadlessTestimonials: data.posts.nodes },
-    revalidate: 15,
-  };
+    return {
+      props: { HeadlessTestimonials: (data as any).posts.nodes },
+      revalidate: 15,
+    };
+  } catch (error) {
+    return {
+      props: { HeadlessTestimonials: [] },
+      revalidate: 5,
+    };
+  }
 }
